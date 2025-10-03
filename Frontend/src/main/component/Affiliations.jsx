@@ -26,32 +26,14 @@ const CardContent = ({ children, className, ...props }) => (
   </div>
 );
 
-
-
-
-
-
-
-
-
-
-
 export default function Affiliations() {
   const [isAppointmentOpen, setIsAppointmentOpen] = useState(false);
 
-const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [scrollDir, setScrollDir] = useState("up");
   const prevScrollY = useRef(0);
 
-
-
-
-
-
-
-
-
- useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       // Scroll direction
@@ -77,9 +59,7 @@ const [scrolled, setScrolled] = useState(false);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-
-
- const handleScrollTo = (id) => {
+  const handleScrollTo = (id) => {
     const element = document.getElementById(id);
     if (element) {
       window.scrollTo({
@@ -89,11 +69,6 @@ const [scrolled, setScrolled] = useState(false);
       setIsOpen(false);
     }
   };
-
-
-
-
-
 
   return (
     <section
@@ -145,33 +120,36 @@ const [scrolled, setScrolled] = useState(false);
               </p>
 
               {/* Qualifications */}
- 
-<div className="space-y-4">
-  <div className="flex items-start gap-3">
-    <GraduationCap className="w-6 h-6 text-[#2A86BF] flex-shrink-0" />
-    <p className="text-gray-700 text-sm sm:text-base">
-      <span className="font-semibold">Qualifications:</span> MD (Obs & Gyn), Fellowship in Reproductive Medicine
-    </p>
-  </div>
-  <div className="flex items-start gap-3">
-    <Stethoscope className="w-6 h-6 text-[#407338] flex-shrink-0" />
-    <p className="text-gray-700 text-sm sm:text-base">
-      <span className="font-semibold">Expertise:</span> IVF Consultation & Planning, Antenatal Care, Women&apos;s Health
-    </p>
-  </div>
-  <div className="flex items-start gap-3">
-    <Award className="w-6 h-6 text-[#98BF45] flex-shrink-0" />
-    <p className="text-gray-700 text-sm sm:text-base">
-      <span className="font-semibold">Clinical Experience:</span> 15+ years in reproductive medicine, known for compassionate patient care and successful IVF outcomes.
-    </p>
-  </div>
-</div>
 
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <GraduationCap className="w-6 h-6 text-[#2A86BF] flex-shrink-0" />
+                  <p className="text-gray-700 text-sm sm:text-base">
+                    <span className="font-semibold">Qualifications:</span> MD
+                    (Obs & Gyn), Fellowship in Reproductive Medicine
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Stethoscope className="w-6 h-6 text-[#407338] flex-shrink-0" />
+                  <p className="text-gray-700 text-sm sm:text-base">
+                    <span className="font-semibold">Expertise:</span> IVF
+                    Consultation & Planning, Antenatal Care, Women&apos;s Health
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Award className="w-6 h-6 text-[#98BF45] flex-shrink-0" />
+                  <p className="text-gray-700 text-sm sm:text-base">
+                    <span className="font-semibold">Clinical Experience:</span>{" "}
+                    15+ years in reproductive medicine, known for compassionate
+                    patient care and successful IVF outcomes.
+                  </p>
+                </div>
+              </div>
 
               {/* CTA */}
               <div className="mt-6">
                 <button
-  onClick={() => handleScrollTo("contact")}
+                  onClick={() => handleScrollTo("contact")}
                   className="bg-[#2A86BF] px-4 rounded-3xl py-2 text-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
                 >
                   Book Consultation

@@ -105,7 +105,7 @@ export default function Navbar() {
           scrollDir === "down" ? "top-0" : scrolled ? "top-0" : "top-[36px]"
         } ${scrolled ? "bg-white shadow-md" : "bg-transparent"}`}
       >
-        <div className="max-w-7xl mx-auto px-2">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
             <div

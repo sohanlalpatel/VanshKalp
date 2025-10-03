@@ -1,6 +1,7 @@
 "use client";
 import { FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa";
 import logo from "../../../assests/logo.png"; // replace with your logo path
+       import { Link as ScrollLink } from "react-scroll"; // npm install react-scroll
 
 export default function Footer() {
   return (
@@ -16,62 +17,69 @@ export default function Footer() {
         </div>
 
         {/* Quick Links */}
-       <div>
+
+<div>
   <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
-  <ul className="space-y-2">
+  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
     <li>
-      <a
-        id="home"
-        href="#hero"
-        className="hover:text-yellow-300 transition-colors"
+      <ScrollLink
+        to="hero"
+        smooth={true}
+        duration={500}
+        className="cursor-pointer hover:text-yellow-300 transition-colors"
       >
         Home
-      </a>
+      </ScrollLink>
     </li>
     <li>
-      <a
-        id="about"
-        href="#"
-        className="hover:text-yellow-300 transition-colors"
+      <ScrollLink
+        to="about"
+        smooth={true}
+        duration={500}
+        className="cursor-pointer hover:text-yellow-300 transition-colors"
       >
         About
-      </a>
+      </ScrollLink>
     </li>
     <li>
-      <a
-        id="specialists"
-        href=""
-        className="hover:text-yellow-300 transition-colors"
+      <ScrollLink
+        to="affiliations"
+        smooth={true}
+        duration={500}
+        className="cursor-pointer hover:text-yellow-300 transition-colors"
       >
         Specialists
-      </a>
+      </ScrollLink>
     </li>
     <li>
-      <a
-        id="services"
-        href=""
-        className="hover:text-yellow-300 transition-colors"
+      <ScrollLink
+        to="services"
+        smooth={true}
+        duration={500}
+        className="cursor-pointer hover:text-yellow-300 transition-colors"
       >
         Services
-      </a>
+      </ScrollLink>
     </li>
     <li>
-      <a
-        id="link-contact"
-        href="#contact"
-        className="hover:text-yellow-300 transition-colors"
+      <ScrollLink
+        to="contact"
+        smooth={true}
+        duration={500}
+        className="cursor-pointer hover:text-yellow-300 transition-colors"
       >
         Contact
-      </a>
+      </ScrollLink>
     </li>
     <li>
-      <a
-        id="link-privacy"
-        href="/"
-        className="hover:text-yellow-300 transition-colors"
+      <ScrollLink
+        to="Testimonial"
+        smooth={true}
+        duration={500}
+        className="cursor-pointer hover:text-yellow-300 transition-colors"
       >
-        Privacy Policy
-      </a>
+        Testimonial
+      </ScrollLink>
     </li>
   </ul>
 </div>
@@ -109,10 +117,6 @@ export default function Footer() {
               <FaInstagram size={28} />
             </a>
           </div>
-          <p className="text-gray-200 text-sm">
-            © 2025 Dr. Jignesh Sharma & Dr. Vaishali Sharma. All rights
-            reserved.
-          </p>
         </div>
       </div>
 

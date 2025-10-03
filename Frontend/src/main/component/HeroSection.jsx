@@ -1,75 +1,121 @@
 "use client";
 
 import { Facebook, Instagram, Youtube } from "lucide-react";
-import banner1 from "../../../assests/banner.png";
+import banner1 from "../../../assests/bgHero.png";
+import image from "../../../assests/cut.png";
 
 const Button = ({ children, className, ...props }) => (
   <button
     {...props}
-    className={`inline-flex items-center justify-center rounded-md px-6 py-3 font-medium ${className}`}
+    className={`inline-flex items-center justify-center font-medium transition-all duration-300 md:px-2 md:py-2 ${className}`}
   >
     {children}
   </button>
 );
-
 export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative h-screen flex items-center justify-center text-white overflow-hidden"
+      className="relative flex items-center justify-center text-white overflow-hidden"
     >
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center scale-105 animate-slowZoom"
-        style={{
-          backgroundImage: `url(${banner1})`,
-        }}
+        style={{ backgroundImage: `url(${banner1})` }}
       />
 
-      {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-black/0"></div>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/30"></div>
 
       {/* Content wrapper */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 md:px-12 grid md:grid-cols-2 items-center gap-8 md:gap-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 md:px-12 grid md:grid-cols-2 items-center gap-12">
         {/* Left Content */}
-        <div className="animate-fadeInUp pt-32 md:pt-48 lg:pt-40 text-center md:text-left">
-          {/* Animated Gradient Text */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6  text-white animate-gradient">
+        <div className="order-2 md:order-1 animate-fadeInUp pt-28 md:pt-40 text-center md:text-left">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-white animate-gradient">
             YOUR HEALTH IN OUR HANDS
           </h1>
 
+          {/* Paragraph */}
           <p className="text-base sm:text-lg text-gray-200 mb-8 max-w-lg mx-auto md:mx-0 animate-fadeIn delay-200">
             We provide top-notch healthcare solutions with personalized
             attention and expert guidance to keep you healthy and happy.
           </p>
 
+          {/* Image should appear right below paragraph in mobile */}
+          <div className=" md:hidden flex justify-center mb-8">
+            <div className="relative">
+              <div className="absolute inset-0 rounded-full md:border-4 border-[#98BF45] shadow-lg animate-pulse"></div>
+              <img
+                src={image}
+                alt="Healthcare illustration"
+                className="relative w-49 sm:w-56 h-auto object-contain rounded-full p-1 md:p-2 md:bg-white/10 md:backdrop-blur-md"
+              />
+            </div>
+          </div>
+
           {/* Contact */}
           <div className="mb-8 animate-fadeIn delay-400">
             <h3 className="text-lg sm:text-xl font-semibold">Contact Us</h3>
-            <p className="text-gray-300">www.yoursite.com</p>
+            <p className="text-gray-300">www.vanshkalp.com</p>
           </div>
 
-          {/* Social buttons */}
-          <div className="flex flex-col md:flex-row gap-4 animate-fadeIn delay-600 justify-center md:justify-start pb-20">
-            <Button className="bg-white hover:bg-transparent text-red-600 hover:border-1 border-white/30 transition-all duration-300 hover:scale-110 flex items-center gap-2">
-              <Youtube className="md:w-5 md:h-5" /> YouTube
+          {/* Social Buttons */}
+          <div className="flex flex-row gap-4 animate-fadeIn delay-600 justify-center md:justify-start pb-10">
+            {/* YouTube */}
+            <Button
+              className="bg-white text-red-600 border border-transparent 
+               hover:bg-red-50 hover:border-red-200 hover:scale-110 
+               rounded-full md:rounded-lg 
+               w-10 h-10 md:w-auto md:h-auto 
+               shadow-md hover:shadow-xl 
+               group"
+            >
+              <Youtube className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" />
+              <span className="hidden md:inline ml-2">YouTube</span>
             </Button>
-            <Button className="bg-white hover:bg-transparent text-blue-600 hover:border-1 border-white/30 transition-all duration-300 hover:scale-110 flex items-center gap-2">
-              <Facebook className="md:w-5 md:h-5" /> Facebook
+
+            {/* Facebook */}
+            <Button
+              className="bg-white text-blue-600 border border-transparent 
+               hover:bg-blue-50 hover:border-blue-200 hover:scale-110 
+               rounded-full md:rounded-lg 
+               w-10 h-10 md:w-auto md:h-auto 
+               shadow-md hover:shadow-xl 
+               group"
+            >
+              <Facebook className="w-5 h-5 transition-transform duration-300 group-hover:scale-125" />
+              <span className="hidden md:inline ml-2">Facebook</span>
             </Button>
-            <Button className="bg-white hover:bg-transparent text-pink-600 hover:border-1 border-white/30 transition-all duration-300 hover:scale-110 flex items-center gap-2">
-              <Instagram className="md:w-5 md:h-5" /> Instagram
+
+            {/* Instagram */}
+            <Button
+              className="bg-white text-pink-600 border border-transparent 
+               hover:bg-pink-50 hover:border-pink-200 hover:scale-110 
+               rounded-full md:rounded-lg 
+               w-10 h-10 md:w-auto md:h-auto 
+               shadow-md hover:shadow-xl 
+               group"
+            >
+              <Instagram className="w-5 h-5 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110" />
+              <span className="hidden md:inline ml-2">Instagram</span>
             </Button>
           </div>
         </div>
 
-        {/* Right (Optional Image/Animation) */}
-        <div className="hidden md:flex justify-center items-center">
-          {/* Placeholder for future image or illustration */}
+        {/* Right Image (only visible on md and above) */}
+        <div className="order-1 md:order-2 hidden md:flex justify-center items-center relative pb-6 md:pt-31">
+          <div className="relative">
+            <div className="absolute inset-0 rounded-full md:border-4 border-[#98BF45] shadow-lg animate-pulse p-2"></div>
+            <img
+              src={image}
+              alt="Healthcare illustration"
+              className="relative w-40 sm:w-56 md:w-80 lg:w-[30rem] h-auto object-contain rounded-full p-1 bg-white/10 backdrop-blur-md"
+            />
+          </div>
         </div>
       </div>
 
-      {/* Tailwind Animations */}
+      {/* Animations */}
       <style jsx>{`
         @keyframes gradientMove {
           0% {
@@ -82,7 +128,16 @@ export default function HeroSection() {
             background-position: 0% 50%;
           }
         }
-        .animate-gradient {
+        // .animate-gradient {
+        //   background-image: linear-gradient(
+        //     90deg,
+        //     #98bf45,
+        //     #6bb5ff,
+        //     #ff6584,
+        //     #98bf45
+        //   );
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
           background-size: 200% 200%;
           animation: gradientMove 6s ease infinite;
         }

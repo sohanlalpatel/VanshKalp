@@ -15,11 +15,11 @@ import AboutUs from "./About";
 import Affiliations from "./Affiliations";
 import Services from "./Services";
 import ContactUs from "./Contact";
-import Welcom from "./welcome";
 import LifeStyle from "./LifeStyle";
 import MissionVision from "./Mission&Vision";
 import Footer from "./Footer";
 import Testimonials from "./Testimonials";
+import Intro from "./Intro";
 
 // Inline Button component
 const Button = ({ children, className, ...props }) => (
@@ -77,7 +77,7 @@ export default function DoctorLandingPage() {
 
         <HeroSection />
 
-        <Welcom />
+        <Intro/>
         <AboutUs />
         <Affiliations />
 

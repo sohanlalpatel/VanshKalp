@@ -1,13 +1,16 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import { FaPhoneAlt, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+     import Swal from "sweetalert2";
 
 export default function ContactUs() {
   const formRef = useRef();
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsLoading(true); // Start loading
 
     emailjs
       .sendForm(
@@ -16,15 +19,43 @@ export default function ContactUs() {
         formRef.current,
         "6HBhdrdzkeg658DXP" // Replace with your EmailJS public key
       )
-      .then(
-        () => {
-          alert("✅ Message sent successfully!");
-          formRef.current.reset();
-        },
-        (error) => {
-          alert("❌ Failed to send message. " + error.text);
-        }
-      );
+
+ .then(
+  () => {
+              setIsLoading(false); // Stop loading
+
+    Swal.fire({
+      title: "Message Sent!",
+      text: "✅ Your message has been sent successfully.",
+      icon: "success",
+      timer: 2500,            // Auto close after 2.5 seconds
+      showConfirmButton: false,
+      timerProgressBar: true, // Show a progress bar
+      position: "top-end",    // Top-right corner
+      background: "#e6ffed",  // Light green background
+      color: "#2A86BF",       // Text color
+      toast: true             // Makes it a small toast popup
+    });
+    formRef.current.reset();
+  },
+  (error) => {
+              setIsLoading(false); // Stop loading
+
+    Swal.fire({
+      title: "Oops!",
+      text: "❌ Failed to send message. " + error.text,
+      icon: "error",
+      timer: 3000,
+      showConfirmButton: false,
+      timerProgressBar: true,
+      position: "top-end",
+      background: "#ffe6e6",
+      color: "#d33",
+      toast: true
+    });
+  }
+);
+
   };
 
   return (
@@ -95,129 +126,159 @@ export default function ContactUs() {
           </h3>
 
           <form
-            ref={formRef}
-            onSubmit={handleSubmit}
-            className="grid grid-cols-1 md:grid-cols-2 gap-4"
-          >
-            {/* Full Name */}
-            <div className="flex flex-col">
-              <label className="mb-1 text-sm font-medium text-gray-700">
-                Full Name
-              </label>
-              <input
-                type="text"
-                name="user_name"
-                placeholder="Name"
-                required
-                className="w-full px-4 py-3 border border-gray-400 rounded-xl text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition"
-              />
-            </div>
+  ref={formRef}
+  onSubmit={handleSubmit}
+  className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto"
+>
+  {/* Full Name */}
+  <div className="flex flex-col">
+    <label className="mb-1 text-sm font-medium text-gray-700">
+      Full Name
+    </label>
+    <input
+      type="text"
+      name="user_name"
+      placeholder="Name"
+      required
+      className="w-full px-4 py-3 border border-gray-400 rounded-xl text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition"
+    />
+  </div>
 
-            {/* Email */}
-            <div className="flex flex-col">
-              <label className="mb-1 text-sm font-medium text-gray-700">
-                Email
-              </label>
-              <input
-                type="email"
-                name="user_email"
-                placeholder="email"
-                required
-                className="w-full px-4 py-3 border border-gray-400 rounded-xl text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition"
-              />
-            </div>
+  {/* Email */}
+  <div className="flex flex-col">
+    <label className="mb-1 text-sm font-medium text-gray-700">
+      Email
+    </label>
+    <input
+      type="email"
+      name="user_email"
+      placeholder="Email"
+      required
+      className="w-full px-4 py-3 border border-gray-400 rounded-xl text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition"
+    />
+  </div>
 
-            {/* Phone */}
-            <div className="flex flex-col">
-              <label className="mb-1 text-sm font-medium text-gray-700">
-                Phone Number
-              </label>
-              <input
-                type="tel"
-                name="phone"
-                placeholder="number"
-                required
-                maxLength={10}
-                pattern="\d{10}"
-                title="Please enter a 10-digit phone number"
-                onChange={(e) =>
-                  (e.target.value = e.target.value.replace(/\D/g, ""))
-                }
-                className="w-full px-4 py-3 border border-gray-400 rounded-xl text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition"
-              />
-            </div>
+  {/* Phone */}
+  <div className="flex flex-col">
+    <label className="mb-1 text-sm font-medium text-gray-700">
+      Phone Number
+    </label>
+    <input
+      type="tel"
+      name="phone"
+      placeholder="10-digit number"
+      required
+      maxLength={10}
+      pattern="\d{10}"
+      title="Please enter a 10-digit phone number"
+      onChange={(e) =>
+        (e.target.value = e.target.value.replace(/\D/g, ""))
+      }
+      className="w-full px-4 py-3 border border-gray-400 rounded-xl text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition"
+    />
+  </div>
 
-            {/* Select Doctor */}
-            <div className="flex flex-col">
-              <label className="mb-1 text-sm font-medium text-gray-700">
-                Select Doctor
-              </label>
-              <select
-                name="doctor"
-                required
-                className="w-full px-4 py-3 border border-gray-400 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#2A86BF]"
+  {/* Select Doctor */}
+  <div className="flex flex-col">
+    <label className="mb-1 text-sm font-medium text-gray-700">
+      Select Doctor
+    </label>
+    <select
+      name="doctor"
+      required
+      className="w-full px-4 py-3 border border-gray-400 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition"
+    >
+      <option value="">-- Choose Doctor --</option>
+      <option value="Dr. Jignesh Sharma">Dr. Jignesh Sharma</option>
+      <option value="Dr. Vaishali Sharma">Dr. Vaishali Sharma</option>
+    </select>
+  </div>
+
+  {/* Appointment Date */}
+  <div className="flex flex-col">
+    <label className="mb-1 text-sm font-medium text-gray-700">
+      Appointment Date
+    </label>
+    <input
+      type="date"
+      name="date"
+      required
+      className="w-full px-4 py-3 border border-gray-400 rounded-xl text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition"
+    />
+  </div>
+
+  {/* Time Slot */}
+  <div className="flex flex-col">
+    <label className="mb-1 text-sm font-medium text-gray-700">
+      Time Slot
+    </label>
+    <select
+      name="time"
+      required
+      className="w-full px-4 py-3 border border-gray-400 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition"
+    >
+      <option value="">-- Select Time --</option>
+      <option value="09:00 AM - 10:00 AM">09:00 AM - 10:00 AM</option>
+      <option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</option>
+      <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
+      <option value="02:00 PM - 03:00 PM">02:00 PM - 03:00 PM</option>
+      <option value="03:00 PM - 04:00 PM">03:00 PM - 04:00 PM</option>
+    </select>
+  </div>
+
+  {/* Message - full width */}
+  <div className="flex flex-col md:col-span-2">
+    <label className="mb-1 text-sm font-medium text-gray-700">
+      Message (Optional)
+    </label>
+    <textarea
+      name="message"
+      placeholder="Type your message..."
+      rows="3"
+      className="w-full px-4 py-3 border border-gray-400 rounded-xl text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition"
+    />
+  </div>
+
+  {/* Submit Button - full width */}
+    <div className="md:col-span-2">
+        <button
+          type="submit"
+          disabled={isLoading}
+          className={`w-full cursor-pointer bg-gradient-to-r from-[#407338] via-[#98BF45] to-[#2A86BF] text-white py-3 rounded-full font-semibold text-base transition ${
+            isLoading ? "opacity-70 cursor-not-allowed" : "hover:opacity-90"
+          }`}
+        >
+          {isLoading ? (
+            <div className="flex items-center justify-center gap-2">
+              <svg
+                className="animate-spin h-5 w-5 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
               >
-                <option value="">-- Choose Doctor --</option>
-                <option value="Dr. Jignesh Sharma">Dr. Jignesh Sharma</option>
-                <option value="Dr. Vaishali Sharma">Dr. Vaishali Sharma</option>
-              </select>
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 100 16v-4l-3 3 3 3v-4a8 8 0 01-8-8z"
+                ></path>
+              </svg>
+              Sending...
             </div>
+          ) : (
+            "Confirm Appointment"
+          )}
+        </button>
+      </div>
+</form>
 
-            {/* Appointment Date */}
-            <div className="flex flex-col">
-              <label className="mb-1 text-sm font-medium text-gray-700">
-                Appointment Date
-              </label>
-              <input
-                type="date"
-                name="date"
-                required
-                className="w-full px-4 py-3 border border-gray-400 rounded-xl text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition"
-              />
-            </div>
-
-            {/* Time Slot */}
-            <div className="flex flex-col">
-              <label className="mb-1 text-sm font-medium text-gray-700">
-                Time Slot
-              </label>
-              <select
-                name="time"
-                required
-                className="w-full px-4 py-3 border border-gray-400 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#2A86BF]"
-              >
-                <option value="">-- Select Time --</option>
-                <option value="09:00 AM - 10:00 AM">09:00 AM - 10:00 AM</option>
-                <option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</option>
-                <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
-                <option value="02:00 PM - 03:00 PM">02:00 PM - 03:00 PM</option>
-                <option value="03:00 PM - 04:00 PM">03:00 PM - 04:00 PM</option>
-              </select>
-            </div>
-
-            {/* Message - full width */}
-            <div className="flex flex-col md:col-span-2">
-              <label className="mb-1 text-sm font-medium text-gray-700">
-                Message (Optional)
-              </label>
-              <textarea
-                name="message"
-                placeholder="Type your message.........."
-                rows="2"
-                className="w-full px-4 py-3 border border-gray-400 rounded-xl text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition"
-              />
-            </div>
-
-            {/* Submit Button - full width */}
-            <div className="md:col-span-2">
-              <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-[#407338] via-[#98BF45] to-[#2A86BF] text-white py-3 rounded-full font-semibold text-base hover:opacity-90 transition"
-              >
-                Confirm Appointment
-              </button>
-            </div>
-          </form>
         </div>
       </div>
     </section>

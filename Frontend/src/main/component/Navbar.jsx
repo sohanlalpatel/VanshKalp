@@ -272,7 +272,7 @@ export default function Navbar() {
             ))}
             <button
               onClick={() => handleScrollTo("contact")}
-              className={`w-full mt-2 px-4 py-2 rounded-full font-semibold transition cursor-pointer ${
+              className={`w-full mt-2 px-4 py-2 rounded-xl font-semibold transition cursor-pointer ${
                 scrolled
                   ? "bg-[#2A86BF] text-white hover:bg-[#246ea0]"
                   : "bg-white text-[#2A86BF] hover:bg-gray-100"

@@ -1,6 +1,65 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const LifeStyle = () => {
+ const [scrolled, setScrolled] = useState(false);
+  const [scrollDir, setScrollDir] = useState("up");
+  const prevScrollY = useRef(0);
+
+
+
+
+
+useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      // Scroll direction
+      setScrollDir(currentScrollY > prevScrollY.current ? "down" : "up");
+      prevScrollY.current = currentScrollY;
+
+      // Active section
+      let current = "hero";
+      sections.forEach((section) => {
+        const element = document.getElementById(section.id);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 80) current = section.id;
+        }
+      });
+      setActiveSection(current);
+
+      // Navbar background
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+
+
+
+
+
+ const handleScrollTo = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 70,
+        behavior: "smooth",
+      });
+      setIsOpen(false);
+    }
+  };
+
+
+
+
+
+
+
+
+
+
   return (
     <div>
       <section
@@ -142,11 +201,12 @@ const LifeStyle = () => {
             {/* CTA */}
             <div className="flex-shrink-0 mt-4 md:mt-0">
               <button
+                  onClick={() => handleScrollTo("contact")}
                 style={{
                   background:
                     "linear-gradient(135deg, #2A86BF, #98BF45, #407338)",
                 }}
-                className="text-white px-10 sm:px-14 py-4 sm:py-26 rounded-br-full font-semibold shadow-lg text-lg sm:text-xl transition-all hover:scale-105"
+                className="text-white px-10 sm:px-14 py-4 sm:py-26 rounded-br-full font-semibold shadow-lg text-lg sm:text-xl transition-all hover:scale-105 cursor-pointer"
               >
                 Consult With Our Team
               </button>

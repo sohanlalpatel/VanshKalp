@@ -41,58 +41,64 @@ export default function Services() {
 
         {/* Doctors List */}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {doctors.map((doc, index) => (
-            <div
-              key={index}
-              className="relative rounded-2xl shadow-lg overflow-hidden transform transition duration-500 hover:scale-105    "
-            >
-              {/* Gradient Card Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#b4e2ff] via-[#e5f1ca] to-[#c6fcbd] opacity-90 transition-all duration-700 hover:opacity-100"></div>
-
-             <div className="relative p-4 md:p-8 text-black">
-  {/* Doctor Name + WhatsApp */}
-  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-3">
-    <h3 className="text-xl md:text-2xl font-semibold drop-shadow-md">
-      {doc.name}
-    </h3>
-
-    {/* WhatsApp Button */}
-    <a
-      href={doc.whatsapp}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center justify-center 
-                 bg-white text-green-600 
-                 rounded-full sm:rounded-full 
-                 shadow hover:bg-green-600 hover:text-white 
-                 transition duration-300 transform hover:scale-105
-                 w-10 h-10 sm:w-auto sm:h-auto sm:px-4 sm:py-2"
+       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+  {doctors.map((doc, index) => (
+    <div
+      key={index}
+      className="relative rounded-2xl shadow-lg overflow-hidden transform transition duration-500 hover:scale-105"
     >
-      <FaWhatsapp size={20} />
-      <span className="hidden sm:inline ml-2">WhatsApp</span>
-    </a>
-  </div>
+      {/* Gradient Card Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#b4e2ff] via-[#e5f1ca] to-[#c6fcbd] opacity-90 transition-all duration-700 hover:opacity-100"></div>
 
-  {/* Services List with Advanced Icon */}
-  <ul className="space-y-3">
-    {doc.services.map((service, i) => (
-      <li
-        key={i}
-        className="flex items-start gap-3 text-sm md:text-md group transition-transform duration-300 hover:translate-x-2 hover:scale-105"
-      >
-        <FaCheckCircle
-          className="w-5 h-5 text-green-500 group-hover:text-yellow-400 transition-colors duration-300"
-        />
-        <p className="leading-tight">{service}</p>
-      </li>
-    ))}
-  </ul>
+      <div className="relative p-4 md:p-8 text-black">
+        {/* Doctor Name + WhatsApp */}
+        <div className="flex items-center justify-between mb-6 gap-3">
+          <h3 className="text-xl md:text-2xl font-semibold drop-shadow-md flex items-center gap-2">
+            {doc.name}
+            {/* WhatsApp Icon (Mobile Only) */}
+            <a
+              href={doc.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex md:hidden items-center justify-center bg-white text-green-600 rounded-full shadow hover:bg-green-600 hover:text-white transition duration-300 transform hover:scale-105 w-9 h-9"
+            >
+              <FaWhatsapp size={18} />
+            </a>
+          </h3>
+
+          {/* WhatsApp Button (Desktop Only) */}
+          <a
+            href={doc.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:flex items-center justify-center  
+             bg-white text-green-600 
+             rounded-full shadow hover:bg-green-600 hover:text-white 
+             transition duration-300 transform hover:scale-105
+             px-4 py-2"
+          >
+            <FaWhatsapp size={20} />
+            <span className="ml-2">WhatsApp</span>
+          </a>
+        </div>
+
+        {/* Services List with Advanced Icon */}
+        <ul className="space-y-3">
+          {doc.services.map((service, i) => (
+            <li
+              key={i}
+              className="flex items-start gap-3 text-sm md:text-md group transition-transform duration-300 hover:translate-x-2 hover:scale-105"
+            >
+              <FaCheckCircle className="w-5 h-5 text-green-500 group-hover:text-yellow-400 transition-colors duration-300" />
+              <p className="leading-tight">{service}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  ))}
 </div>
 
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

@@ -1,11 +1,11 @@
 "use client";
 import { FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa";
 import logo from "../../../assests/logo.png"; // replace with your logo path
-       import { Link as ScrollLink } from "react-scroll"; // npm install react-scroll
+import { Link as ScrollLink } from "react-scroll"; // npm install react-scroll
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-[#070b07] via-[#1d2116] to-[#0d161b] text-white py-12 px-6">
+    <footer className="bg-gradient-to-r from-[#070b07] via-[#1d2116] to-[#0d161b] text-white py-8 px-6">
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 items-start">
         {/* Logo & About */}
         <div className="flex flex-col items-start space-y-4">
@@ -18,72 +18,71 @@ export default function Footer() {
 
         {/* Quick Links */}
 
-<div>
-  <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
-  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-    <li>
-      <ScrollLink
-        to="hero"
-        smooth={true}
-        duration={500}
-        className="cursor-pointer hover:text-yellow-300 transition-colors"
-      >
-        Home
-      </ScrollLink>
-    </li>
-    <li>
-      <ScrollLink
-        to="about"
-        smooth={true}
-        duration={500}
-        className="cursor-pointer hover:text-yellow-300 transition-colors"
-      >
-        About
-      </ScrollLink>
-    </li>
-    <li>
-      <ScrollLink
-        to="affiliations"
-        smooth={true}
-        duration={500}
-        className="cursor-pointer hover:text-yellow-300 transition-colors"
-      >
-        Specialists
-      </ScrollLink>
-    </li>
-    <li>
-      <ScrollLink
-        to="services"
-        smooth={true}
-        duration={500}
-        className="cursor-pointer hover:text-yellow-300 transition-colors"
-      >
-        Services
-      </ScrollLink>
-    </li>
-    <li>
-      <ScrollLink
-        to="contact"
-        smooth={true}
-        duration={500}
-        className="cursor-pointer hover:text-yellow-300 transition-colors"
-      >
-        Contact
-      </ScrollLink>
-    </li>
-    <li>
-      <ScrollLink
-        to="Testimonial"
-        smooth={true}
-        duration={500}
-        className="cursor-pointer hover:text-yellow-300 transition-colors"
-      >
-        Testimonial
-      </ScrollLink>
-    </li>
-  </ul>
-</div>
-
+        <div>
+          <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <li>
+              <ScrollLink
+                to="hero"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer hover:text-yellow-300 transition-colors"
+              >
+                Home
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                to="about"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer hover:text-yellow-300 transition-colors"
+              >
+                About
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                to="affiliations"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer hover:text-yellow-300 transition-colors"
+              >
+                Specialists
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                to="services"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer hover:text-yellow-300 transition-colors"
+              >
+                Services
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                to="contact"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer hover:text-yellow-300 transition-colors"
+              >
+                Contact
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                to="Testimonial"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer hover:text-yellow-300 transition-colors"
+              >
+                Testimonial
+              </ScrollLink>
+            </li>
+          </ul>
+        </div>
 
         {/* Contact & Social */}
         <div>

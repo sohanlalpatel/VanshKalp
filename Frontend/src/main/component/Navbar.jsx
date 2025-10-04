@@ -21,7 +21,7 @@ export default function Navbar() {
     { id: "affiliations", label: "Specialists" },
     { id: "services", label: "Services" },
     { id: "lifestyle", label: "LifeStyle" },
-   ];
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,9 +60,7 @@ export default function Navbar() {
     }
   };
 
-
-
-   const scrollToSection = (id) => {
+  const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
       window.scrollTo({
@@ -77,22 +75,22 @@ export default function Navbar() {
     <>
       {/* --------- Top Header --------- */}
       <div
-        className={`fixed top-0 left-0 w-full  text-white text-sm z-20   bg-sky-500/20 transition-transform duration-300 border-b-1 ${
+        className={`fixed top-0 left-0 w-full  text-black text-sm z-20   bg-sky-100 transition-transform duration-300 border-b-1 ${
           scrollDir === "down" ? "-translate-y-full" : "translate-y-0"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 py-2 flex flex-col md:flex-row items-center justify-end gap-2">
           <div className="flex flex-col md:flex-row justify-end gap-4 text-end md:text-right">
             <span className=" flex items-center gap-1">
-              <MapPin size={16} className="text-white/80" />
+              <MapPin size={16} className="text-black" />
               123 Main Street, City
             </span>
             <span className="hidden md:flex items-center gap-1">
-              <Phone size={16} className="text-white/80" />
+              <Phone size={16} className="text-black" />
               +91 98765 43210
             </span>
             <span className="hidden md:flex items-center gap-1">
-              <Mail size={16} className="text-white/80" />
+              <Mail size={16} className="text-black" />
               info@clinic.com
             </span>
           </div>
@@ -134,77 +132,77 @@ export default function Navbar() {
                   {section.label}
                 </button>
               ))} */}
-                <button
-                  onClick={() => handleScrollTo("hero")}
-                  className={`font-medium text-sm lg:text-base transition-colors duration-300 cursor-pointer ${
-                    activeSection === "hero"
-                      ? scrolled
-                        ? "text-[#2A86BF] border-b-2 border-[#2A86BF]"
-                        : "text-white border-b-2 border-white"
-                      : scrolled
-                      ? "text-gray-800 hover:text-[#2A86BF]"
-                      : "text-white hover:text-gray-200"
-                  }`}
-                >
+              <button
+                onClick={() => handleScrollTo("hero")}
+                className={`font-medium text-sm lg:text-base transition-colors duration-300 cursor-pointer ${
+                  activeSection === "hero"
+                    ? scrolled
+                      ? "text-[#2A86BF] border-b-2 border-[#2A86BF]"
+                      : "text-blue-500 border-b-2 border-gray-500"
+                    : scrolled
+                    ? "text-gray-800 hover:text-[#2A86BF]"
+                    : "text-black hover:text-[#82caf6]"
+                }`}
+              >
                 Home
-                </button>
-                <button
-                  onClick={() => handleScrollTo("about")}
-                  className={`font-medium text-sm lg:text-base transition-colors duration-300 cursor-pointer ${
-                    activeSection === "about"
-                      ? scrolled
-                        ? "text-[#2A86BF] border-b-2 border-[#2A86BF]"
-                        : "text-white border-b-2 border-white"
-                      : scrolled
-                      ? "text-gray-800 hover:text-[#2A86BF]"
-                      : "text-white hover:text-gray-200"
-                  }`}
-                >
+              </button>
+              <button
+                onClick={() => handleScrollTo("about")}
+                className={`font-medium text-sm lg:text-base transition-colors duration-300 cursor-pointer ${
+                  activeSection === "about"
+                    ? scrolled
+                      ? "text-[#2A86BF] border-b-2 border-[#2A86BF]"
+                      : "text-white border-b-2 border-white"
+                    : scrolled
+                    ? "text-gray-800 hover:text-[#2A86BF]"
+                    : "text-black hover:text-[#148bd4]"
+                }`}
+              >
                 About
-                </button>
-                <button
-                  onClick={() => handleScrollTo("affiliations")}
-                  className={`font-medium text-sm lg:text-base transition-colors duration-300 cursor-pointer ${
-                    activeSection === "affiliations"
-                      ? scrolled
-                        ? "text-[#2A86BF] border-b-2 border-[#2A86BF]"
-                        : "text-white border-b-2 border-white"
-                      : scrolled
-                      ? "text-gray-800 hover:text-[#2A86BF]"
-                      : "text-white hover:text-gray-200"
-                  }`}
-                >
+              </button>
+              <button
+                onClick={() => handleScrollTo("affiliations")}
+                className={`font-medium text-sm lg:text-base transition-colors duration-300 cursor-pointer ${
+                  activeSection === "affiliations"
+                    ? scrolled
+                      ? "text-[#2A86BF] border-b-2 border-[#2A86BF]"
+                      : "text-white border-b-2 border-white"
+                    : scrolled
+                    ? "text-gray-800 hover:text-[#2A86BF]"
+                    : "text-black hover:text-[#1580c2]"
+                }`}
+              >
                 Affiliations
-                </button>
-                <button
-                  onClick={() => handleScrollTo("services")}
-                  className={`font-medium text-sm lg:text-base transition-colors duration-300 cursor-pointer ${
-                    activeSection === "services"
-                      ? scrolled
-                        ? "text-[#2A86BF] border-b-2 border-[#2A86BF]"
-                        : "text-white border-b-2 border-white"
-                      : scrolled
-                      ? "text-gray-800 hover:text-[#2A86BF]"
-                      : "text-white hover:text-gray-200"
-                  }`}
-                >
+              </button>
+              <button
+                onClick={() => handleScrollTo("services")}
+                className={`font-medium text-sm lg:text-base transition-colors duration-300 cursor-pointer ${
+                  activeSection === "services"
+                    ? scrolled
+                      ? "text-[#2A86BF] border-b-2 border-[#2A86BF]"
+                      : "text-white border-b-2 border-white"
+                    : scrolled
+                    ? "text-gray-800 hover:text-[#2A86BF]"
+                    : "text-black hover:text-[#1580c2]"
+                }`}
+              >
                 Services
-                </button>
-                <button
-                  onClick={() => handleScrollTo("lifestyle")}
-                  className={`font-medium text-sm lg:text-base transition-colors duration-300 cursor-pointer ${
-                    activeSection === "lifestyle"
-                      ? scrolled
-                        ? "text-[#2A86BF] border-b-2 border-[#2A86BF]"
-                        : "text-white border-b-2 border-white"
-                      : scrolled
-                      ? "text-gray-800 hover:text-[#2A86BF]"
-                      : "text-white hover:text-gray-200"
-                  }`}
-                >
+              </button>
+              <button
+                onClick={() => handleScrollTo("lifestyle")}
+                className={`font-medium text-sm lg:text-base transition-colors duration-300 cursor-pointer ${
+                  activeSection === "lifestyle"
+                    ? scrolled
+                      ? "text-[#2A86BF] border-b-2 border-[#2A86BF]"
+                      : "text-white border-b-2 border-white"
+                    : scrolled
+                    ? "text-gray-800 hover:text-[#2A86BF]"
+                    : "text-black hover:text-[#82caf6]"
+                }`}
+              >
                 Lifestyle
-                </button>
-                {/* <button
+              </button>
+              {/* <button
                   onClick={() => handleScrollTo("hero")}
                   className={`font-medium text-sm lg:text-base transition-colors duration-300 cursor-pointer ${
                     activeSection === "hero"
@@ -218,16 +216,16 @@ export default function Navbar() {
                 >
                 Home
                 </button> */}
-           <button
-  onClick={() => handleScrollTo("contact")}
-  className={`w-full mt-2 px-4 py-2 rounded-full font-semibold transition cursor-pointer ${
-    scrolled
-      ? "bg-[#2A86BF] text-white hover:bg-[#246ea0]"
-      : "bg-white text-[#2A86BF] hover:bg-gray-100"
-  }`}
->
-  Book Appointment
-</button>
+              <button
+                onClick={() => handleScrollTo("contact")}
+                className={`w-full mt-2 px-4 py-2 rounded-full font-semibold transition cursor-pointer ${
+                  scrolled
+                    ? "bg-[#2A86BF] text-white hover:bg-[#246ea0]"
+                    : "bg-blue-100 text-black  hover:bg-gray-200"
+                }`}
+              >
+                Book Appointment
+              </button>
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -235,7 +233,7 @@ export default function Navbar() {
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className={`${
-                  scrolled ? "text-gray-800" : "text-white"
+                  scrolled ? "text-gray-800" : "text-gray-500"
                 } focus:outline-none`}
               >
                 {isOpen ? (
@@ -272,16 +270,16 @@ export default function Navbar() {
                 {section.label}
               </button>
             ))}
-          <button
-  onClick={() => handleScrollTo("contact")}
-  className={`w-full mt-2 px-4 py-2 rounded-full font-semibold transition cursor-pointer ${
-    scrolled
-      ? "bg-[#2A86BF] text-white hover:bg-[#246ea0]"
-      : "bg-white text-[#2A86BF] hover:bg-gray-100"
-  }`}
->
-  Book Appointment
-</button>
+            <button
+              onClick={() => handleScrollTo("contact")}
+              className={`w-full mt-2 px-4 py-2 rounded-full font-semibold transition cursor-pointer ${
+                scrolled
+                  ? "bg-[#2A86BF] text-white hover:bg-[#246ea0]"
+                  : "bg-white text-[#2A86BF] hover:bg-gray-100"
+              }`}
+            >
+              Book Appointment
+            </button>
           </div>
         </div>
       </nav>

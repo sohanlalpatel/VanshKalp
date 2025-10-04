@@ -244,7 +244,7 @@ export default function ContactUs() {
         <button
           type="submit"
           disabled={isLoading}
-          className={`w-full cursor-pointer bg-gradient-to-r from-[#407338] via-[#98BF45] to-[#2A86BF] text-white py-3 rounded-full font-semibold text-base transition ${
+          className={`px-4 cursor-pointer bg-[#2a86bf] text-white py-3 rounded-xl font-semibold text-base transition ${
             isLoading ? "opacity-70 cursor-not-allowed" : "hover:opacity-90"
           }`}
         >

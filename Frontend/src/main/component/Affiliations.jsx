@@ -150,7 +150,7 @@ export default function Affiliations() {
               <div className="mt-6">
                 <button
                   onClick={() => handleScrollTo("contact")}
-                  className="bg-[#2A86BF] px-4 rounded-3xl py-2 text-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
+                  className="bg-[#2A86BF] px-4 rounded-xl py-2 text-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
                 >
                   Book Consultation
                 </button>

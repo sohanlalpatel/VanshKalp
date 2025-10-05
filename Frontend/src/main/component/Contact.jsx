@@ -64,9 +64,8 @@ export default function ContactUs() {
       </h2>
       <div className="  w-20   md:w-28 h-1 bg-gradient-to-r from-[#407338] via-[#98BF45] to-[#2A86BF] mx-auto mb-8 rounded-full"></div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 items-start">
-        {/* Left Column: Info + Map */}
-        {/* Left Column: Info + Map */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-12 items-start">
+         {/* Left Column: Info + Map */}
         <div className="space-y-8">
           {/* Info Cards */}
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
@@ -120,149 +119,166 @@ export default function ContactUs() {
         </div>
 
         {/* Right Column: Contact / Appointment Form */}
-        <div className="bg-white rounded-3xl p-2  py-2 md:p-8 shadow-2xl max-w-3xl mx-auto">
+        <div className="bg-white rounded-3xl p-2 md:p-8 shadow-2xl w-full  ">
           <h3 className="text-2xl  md:text-3xl font-bold mb-8 text-center text-gray-800">
             Book an Appointment
           </h3>
 
-         <form
-  ref={formRef}
-  onSubmit={handleSubmit}
-  className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto px-2 sm:px-6"
->
-  {/* Full Name */}
-  <div className="flex flex-col">
-    <label className="mb-1 text-sm font-medium text-gray-700">Full Name</label>
-    <input
-      type="text"
-      name="user_name"
-      placeholder="Name"
-      required
-      className="w-full px-4 py-3 border border-gray-400 rounded-xl text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition appearance-none"
-    />
-  </div>
-
-  {/* Email */}
-  <div className="flex flex-col">
-    <label className="mb-1 text-sm font-medium text-gray-700">Email</label>
-    <input
-      type="email"
-      name="user_email"
-      placeholder="Email"
-      required
-      className="w-full px-4 py-3 border border-gray-400 rounded-xl text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition appearance-none"
-    />
-  </div>
-
-  {/* Phone */}
-  <div className="flex flex-col">
-    <label className="mb-1 text-sm font-medium text-gray-700">Phone Number</label>
-    <input
-      type="tel"
-      name="phone"
-      placeholder="10-digit number"
-      required
-      maxLength={10}
-      pattern="\d{10}"
-      title="Please enter a 10-digit phone number"
-      onChange={(e) => (e.target.value = e.target.value.replace(/\D/g, ""))}
-      className="w-full px-4 py-3 border border-gray-400 rounded-xl text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition appearance-none"
-    />
-  </div>
-
-  {/* Select Doctor */}
-  <div className="flex flex-col">
-    <label className="mb-1 text-sm font-medium text-gray-700">Select Doctor</label>
-    <select
-      name="doctor"
-      required
-      className="w-full px-4 py-3 border border-gray-400 rounded-xl text-gray-700 text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition appearance-none bg-white"
-    >
-      <option value="">-- Choose Doctor --</option>
-      <option value="Dr. Jignesh Sharma">Dr. Jignesh Sharma</option>
-      <option value="Dr. Vaishali Sharma">Dr. Vaishali Sharma</option>
-    </select>
-  </div>
-
-  {/* Appointment Date */}
-  <div className="flex flex-col">
-    <label className="mb-1 text-sm font-medium text-gray-700">Appointment Date</label>
-    <input
-      type="date"
-      name="date"
-      required
-      className="w-full px-4 py-3 border border-gray-400 rounded-xl text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition appearance-none"
-    />
-  </div>
-
-  {/* Time Slot */}
-  <div className="flex flex-col">
-    <label className="mb-1 text-sm font-medium text-gray-700">Time Slot</label>
-    <select
-      name="time"
-      required
-      className="w-full px-4 py-3 border border-gray-400 rounded-xl text-gray-700 text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition appearance-none bg-white"
-    >
-      <option value="">-- Select Time --</option>
-      <option value="09:00 AM - 10:00 AM">09:00 AM - 10:00 AM</option>
-      <option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</option>
-      <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
-      <option value="02:00 PM - 03:00 PM">02:00 PM - 03:00 PM</option>
-      <option value="03:00 PM - 04:00 PM">03:00 PM - 04:00 PM</option>
-    </select>
-  </div>
-
-  {/* Message */}
-  <div className="flex flex-col sm:col-span-2">
-    <label className="mb-1 text-sm font-medium text-gray-700">Message (Optional)</label>
-    <textarea
-      name="message"
-      placeholder="Type your message..."
-      rows="3"
-      className="w-full px-4 py-3 border border-gray-400 rounded-xl text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition appearance-none resize-none"
-    />
-  </div>
-
-  {/* Submit */}
-  <div className="sm:col-span-2">
-    <button
-      type="submit"
-      disabled={isLoading}
-      className={`w-full px-4 cursor-pointer bg-[#2A86BF] text-white py-3 rounded-xl font-semibold text-base transition ${
-        isLoading ? "opacity-70 cursor-not-allowed" : "hover:opacity-90"
-      }`}
-    >
-      {isLoading ? (
-        <div className="flex items-center justify-center gap-2">
-          <svg
-            className="animate-spin h-5 w-5 text-white"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
+          <form
+            ref={formRef}
+            onSubmit={handleSubmit}
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6  px-4 sm:px-6"
           >
-            <circle
-              className="opacity-25"
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
-              strokeWidth="4"
-            ></circle>
-            <path
-              className="opacity-75"
-              fill="currentColor"
-              d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 100 16v-4l-3 3 3 3v-4a8 8 0 01-8-8z"
-            ></path>
-          </svg>
-          Sending...
-        </div>
-      ) : (
-        "Confirm Appointment"
-      )}
-    </button>
-  </div>
-</form>
+            {/* Full Name */}
+            <div className="flex flex-col">
+              <label className="mb-1 text-sm font-medium text-gray-700">
+                Full Name
+              </label>
+              <input
+                type="text"
+                name="user_name"
+                placeholder="Name"
+                required
+                className="w-full px-4 py-3 border border-gray-400 rounded-xl text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition appearance-none"
+              />
+            </div>
 
+            {/* Email */}
+            <div className="flex flex-col">
+              <label className="mb-1 text-sm font-medium text-gray-700">
+                Email
+              </label>
+              <input
+                type="email"
+                name="user_email"
+                placeholder="Email"
+                required
+                className="w-full px-4 py-3 border border-gray-400 rounded-xl text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition appearance-none"
+              />
+            </div>
+
+            {/* Phone */}
+            <div className="flex flex-col">
+              <label className="mb-1 text-sm font-medium text-gray-700">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone"
+                required
+                maxLength={10}
+                pattern="\d{10}"
+                title="Please enter a 10-digit phone number"
+                onChange={(e) =>
+                  (e.target.value = e.target.value.replace(/\D/g, ""))
+                }
+                className="w-full px-4 py-3 border border-gray-400 rounded-xl text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition appearance-none"
+              />
+            </div>
+
+            {/* Select Doctor */}
+            <div className="flex flex-col">
+              <label className="mb-1 text-sm font-medium text-gray-700">
+                Select Doctor
+              </label>
+              <select
+                name="doctor"
+                required
+                className="w-full px-4 py-3 border border-gray-400 rounded-xl text-gray-700 text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition appearance-none bg-white"
+              >
+                <option value="">-- Choose Doctor --</option>
+                <option value="Dr. Jignesh Sharma">Dr. Jignesh Sharma</option>
+                <option value="Dr. Vaishali Sharma">Dr. Vaishali Sharma</option>
+              </select>
+            </div>
+
+            {/* Appointment Date */}
+            <div className="flex flex-col">
+              <label className="mb-1 text-sm font-medium text-gray-700">
+                Appointment Date
+              </label>
+              <input
+                type="date"
+                name="date"
+                required
+                className="w-full px-4 py-3 border border-gray-400 rounded-xl text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition appearance-none"
+              />
+            </div>
+
+            {/* Time Slot */}
+            <div className="flex flex-col">
+              <label className="mb-1 text-sm font-medium text-gray-700">
+                Time Slot
+              </label>
+              <select
+                name="time"
+                required
+                className="w-full px-4 py-3 border border-gray-400 rounded-xl text-gray-700 text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition appearance-none bg-white"
+              >
+                <option value="">-- Select Time --</option>
+                <option value="09:00 AM - 10:00 AM">09:00 AM - 10:00 AM</option>
+                <option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</option>
+                <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
+                <option value="02:00 PM - 03:00 PM">02:00 PM - 03:00 PM</option>
+                <option value="03:00 PM - 04:00 PM">03:00 PM - 04:00 PM</option>
+              </select>
+            </div>
+
+            {/* Message */}
+            <div className="flex flex-col sm:col-span-2">
+              <label className="mb-1 text-sm font-medium text-gray-700">
+                Message (Optional)
+              </label>
+              <textarea
+                name="message"
+                placeholder="Type your message..."
+                rows="3"
+                className="w-full px-4 py-3 border border-gray-400 rounded-xl text-base focus:outline-none focus:ring-2 focus:ring-[#2A86BF] transition appearance-none resize-none"
+              />
+            </div>
+
+            {/* Submit */}
+            <div className="sm:col-span-2">
+              <button
+                type="submit"
+                disabled={isLoading}
+                className={`w-full px-4 cursor-pointer bg-[#2A86BF] text-white py-3 rounded-xl font-semibold text-base transition ${
+                  isLoading
+                    ? "opacity-70 cursor-not-allowed"
+                    : "hover:opacity-90"
+                }`}
+              >
+                {isLoading ? (
+                  <div className="flex items-center justify-center gap-2">
+                    <svg
+                      className="animate-spin h-5 w-5 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 100 16v-4l-3 3 3 3v-4a8 8 0 01-8-8z"
+                      ></path>
+                    </svg>
+                    Sending...
+                  </div>
+                ) : (
+                  "Confirm Appointment"
+                )}
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </section>

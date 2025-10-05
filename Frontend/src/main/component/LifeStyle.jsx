@@ -1,15 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const LifeStyle = () => {
- const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [scrollDir, setScrollDir] = useState("up");
   const prevScrollY = useRef(0);
 
-
-
-
-
-useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       // Scroll direction
@@ -35,12 +31,7 @@ useEffect(() => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-
-
-
-
-
- const handleScrollTo = (id) => {
+  const handleScrollTo = (id) => {
     const element = document.getElementById(id);
     if (element) {
       window.scrollTo({
@@ -50,15 +41,6 @@ useEffect(() => {
       setIsOpen(false);
     }
   };
-
-
-
-
-
-
-
-
-
 
   return (
     <div>
@@ -70,11 +52,11 @@ useEffect(() => {
           {/* Row 1: Heading + 2 cards */}
           <div className="flex flex-col lg:flex-row gap-6 items-center">
             {/* Heading */}
-            <div className="flex-1 max-w-lg text-center lg:text-left">
+            <div className="flex-1  max-w-lg text-center lg:text-left">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black pb-2">
                 Patients for Today’s Lifestyle
               </h2>
-                    <div className="flex justify-center w-38 md:w-64 h-1 bg-gradient-to-r from-[#407338] via-[#98BF45] to-[#2A86BF] mx-auto mb-2 rounded-full"></div>
+              <div className="flex justify-center w-38 md:w-64 h-1 bg-gradient-to-r from-[#407338] via-[#98BF45] to-[#2A86BF] mx-auto mb-2 rounded-full"></div>
 
               <p className="mt-2 text-base sm:text-lg text-black">
                 We Have All Your Clinic Needs Covered
@@ -117,7 +99,7 @@ useEffect(() => {
           </div>
 
           {/* Row 2: 4 Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               {
                 title: "Wellness Screenings",
@@ -163,7 +145,7 @@ useEffect(() => {
           </div>
 
           {/* Row 3: 2 Cards + CTA */}
-          <div className="flex flex-col md:flex-row gap-4 items-start md:items-center">
+          <div className="w-full flex flex-col lg:flex-row gap-4 items-start md:items-center">
             {/* 2 Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1">
               {[
@@ -199,9 +181,9 @@ useEffect(() => {
             </div>
 
             {/* CTA */}
-            <div className="flex-shrink-0 mt-4 md:mt-0">
+            <div className="flex-shrink-0 mt-4 md:mt-0 ">
               <button
-                  onClick={() => handleScrollTo("contact")}
+                onClick={() => handleScrollTo("contact")}
                 style={{
                   background:
                     "linear-gradient(135deg, #2A86BF, #98BF45, #407338)",

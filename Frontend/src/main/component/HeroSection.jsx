@@ -25,40 +25,26 @@ export default function HeroSection() {
       />
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-bla"></div>
+      <div className="absolute inset-0 "></div>
 
       {/* Content wrapper */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 md:px-12 grid md:grid-cols-2 items-center gap-12">
         {/* Left Content */}
         <div className="order-2 md:order-1 animate-fadeInUp pt-28 md:pt-40 text-left">
-          <h1
-            className="text-2xl md:text-4xl lg:text-6xl font-bold mb-6 text-black"
-          
-          >
+
+          <h1 className="   text-3xl md:text-4xl lg:text-5xl font-bold  text-black pt-4 md:pt-0">
             Your Health In
             <br />
-            <span   style={{ fontFamily: '"Borel", cursive' }} >
-             Our Hands
-            </span>
+            <span style={{ fontFamily: '"Borel", cursive' }}>Our Hands</span>
           </h1>
 
           {/* Paragraph */}
-          <p className="text-base sm:text-md text-gray-900 mb-8 max-w-lg mx-auto md:mx-0 animate-fadeIn delay-200">
+          <p className="  flex   text-gray-900 mb-8 max-w-lg mx-auto md:mx-0 animate-fadeIn delay-200">
             We provide top-notch healthcare solutions with personalized
             attention and expert guidance to keep you healthy and happy.
           </p>
 
           {/* Image should appear right below paragraph in mobile */}
-          <div className=" md:hidden flex justify-center mb-8">
-            <div className="relative">
-              <div className="absolute inset-0 rounded-full md:border-4 border-[#98BF45] shadow-lg animate-pulse"></div>
-              <img
-                src={image}
-                alt="Healthcare illustration"
-                className="relative w-64 sm:w-56 h-auto object-contain rounded-full p-1 md:p-2 md:bg-white/10 md:backdrop-blur-md"
-              />
-            </div>
-          </div>
 
           {/* Contact */}
           {/* <div className="mb-8 animate-fadeIn delay-400">
@@ -69,7 +55,7 @@ export default function HeroSection() {
           </div> */}
 
           {/* Social Buttons */}
-          <div className="flex flex-row gap-4 animate-fadeIn delay-600 justify-center md:justify-start pb-10">
+          <div className="flex flex-row gap-4 md: animate-fadeIn delay-600 justify-start md:justify-start pb-10">
             {/* YouTube */}
             <Button
               className="bg-white text-red-600 border border-transparent 
@@ -110,6 +96,22 @@ export default function HeroSection() {
               {/* <span className="hidden md:inline ml-2">Instagram</span> */}
             </Button>
           </div>
+
+          {/* Mobile Image (connects to bottom like desktop) */}
+          <div className="md:hidden flex justify-center  relative">
+            <div className="relative w-full flex justify-center">
+              {/* Shadow / border pulse effect */}
+              <div className="absolute animate-pulse"></div>
+
+              {/* Image */}
+              <img
+                src={image}
+                alt="Healthcare illustration"
+                className="relative w-79  h-auto object-contain rounded-t-2xl p-1 -mb-1  "
+                
+              />
+            </div>
+          </div>
         </div>
 
         {/* Right Image (only visible on md and above) */}
@@ -125,8 +127,9 @@ export default function HeroSection() {
             <img
               src={image}
               alt="Healthcare illustration"
-              // className="relative w-40 sm:w-56 md:w-80 lg:w-[30rem] h-auto object-contain rounded-2xl drop-shadow-2xl
-              // transform transition-all duration-700 group-hover:rotate-y-6 group-hover:-rotate-x-3 group-hover:scale-105"
+              className="md:rounded-full xl:rounded-none md:border xl:border-0"
+              //  className="relative w-40 sm:w-56 md:w-80 lg:w-[30rem] h-auto object-contain rounded-2xl drop-shadow-2xl
+              //   transform transition-all duration-700 group-hover:rotate-y-6 group-hover:-rotate-x-3 group-hover:scale-105  "
             />
           </div>
         </div>

@@ -52,11 +52,11 @@ const LifeStyle = () => {
           {/* Row 1: Heading + 2 cards */}
           <div className="flex flex-col lg:flex-row gap-6 items-center">
             {/* Heading */}
-            <div className="flex-1  max-w-lg text-center lg:text-left">
+            <div className="flex-1  max-w-lg text-center lg:text-center ">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black pb-2">
                 Patients for Today’s Lifestyle
               </h2>
-              <div className="flex justify-center w-38 md:w-64 h-1 bg-gradient-to-r from-[#407338] via-[#98BF45] to-[#2A86BF] mx-auto mb-2 rounded-full"></div>
+              <div className="flex  justify-start   w-38 md:w-64 h-1 bg-gradient-to-r from-[#407338] via-[#98BF45] to-[#2A86BF] mx-auto mb-2 rounded-full"></div>
 
               <p className="mt-2 text-base sm:text-lg text-black">
                 We Have All Your Clinic Needs Covered

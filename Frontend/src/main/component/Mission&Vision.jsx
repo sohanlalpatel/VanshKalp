@@ -54,16 +54,15 @@ export default function MissionVision() {
         >
           <CardContent>
             <div className="flex items-center gap-4 mb-4">
-              <div className="bg-[#2A86BF] text-white rounded-full p-4 text-2xl">
+              <div className="bg-[#2A86BF] text-white rounded-full p-2 md:p-4 text-2xl">
                 <FaBullseye />
               </div>
-              <h2 className="text-3xl font-bold text-[#2A86BF]">Our Mission</h2>
+              <h2 className="text-2xl  md:text-3xl font-bold text-[#2A86BF]">Our Mission</h2>
             </div>
-            <p className="text-gray-700 text-lg leading-relaxed">
+            <p className="text-gray-700  leading-relaxed">
               To provide accessible, high-quality medical care through
               innovative online and in-clinic consultation services. We ensure
-              every patient receives personalized attention and expert guidance
-              tailored to their unique health needs.
+              every patient receives personalized and expert guidance their unique health needs.
             </p>
           </CardContent>
         </Card>
@@ -80,12 +79,12 @@ export default function MissionVision() {
         >
           <CardContent>
             <div className="flex items-center gap-4 mb-4">
-              <div className="bg-[#407338] text-white rounded-full p-4 text-2xl">
+              <div className="bg-[#407338] text-white rounded-full p-2 md:p-4 text-2xl">
                 <FaEye />
               </div>
-              <h2 className="text-3xl font-bold text-[#407338]">Our Vision</h2>
+              <h2 className="text-2xl  md:text-3xl font-bold text-[#407338]">Our Vision</h2>
             </div>
-            <p className="text-gray-700 text-lg leading-relaxed">
+            <p className="text-gray-700  leading-relaxed">
               To become the leading provider of specialized healthcare, bridging
               the gap between patients and doctors through compassion, advanced
               technology, and clinical excellence — empowering a healthier

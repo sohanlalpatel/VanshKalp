@@ -243,7 +243,7 @@ export default function ContactUs() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className={`w-full px-4 cursor-pointer bg-[#2A86BF] text-white py-3 rounded-xl font-semibold text-base transition ${
+                className={`w-full px-4 cursor-pointer bg-[#407338] text-white py-3 rounded-xl font-semibold text-base transition ${
                   isLoading
                     ? "opacity-70 cursor-not-allowed"
                     : "hover:opacity-90"
@@ -274,7 +274,7 @@ export default function ContactUs() {
                     Sending...
                   </div>
                 ) : (
-                  "Confirm Appointment"
+                  "Book Appointment"
                 )}
               </button>
             </div>

@@ -22,7 +22,7 @@ const Intro = () => {
             ></div>
           </div>
 
-          <p className="text-lg text-gray-600 animate-fade-in-up delay-200">
+          <p className=" text-gray-600 animate-fade-in-up delay-200">
             A descriptive paragraph that tells clients how good you are and
             proves that you are the best choice they’ve made. This paragraph is
             also for those who are looking for a reliable dental or medical
@@ -59,9 +59,15 @@ const Intro = () => {
             </div>
           </div>
 
-          <button className="flex items-center gap-2 px-6 py-3 border border-[#2A86BF] text-[#2A86BF] rounded-lg font-medium hover:bg-[#2A86BF] hover:text-white transition-all duration-300 transform hover:scale-105">
-            <FaMapMarkerAlt /> View On Google Map
-          </button>
+        <a
+  href="https://www.google.com/maps?q=Delhi"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button className="flex items-center gap-2 px-6 py-3 border   text-white rounded-lg font-medium hover:bg-[#6da764] hover:text-white transition-all duration-300 transform hover:scale-105 bg-[#407338] cursor-pointer">
+    <FaMapMarkerAlt /> View On Google Map
+  </button>
+</a>
         </div>
 
         {/* Right Side Image */}

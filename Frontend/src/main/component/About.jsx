@@ -32,12 +32,12 @@ export default function AboutUs() {
           </h2>
 
           {/* Qualifications */}
-          <p className="text-xl font-semibold text-[#2A86BF]">
+          <p className=" text-lg md:text-xl font-semibold text-[#2A86BF]">
             MBBS, MD – Cardiology
           </p>
 
           {/* Bio */}
-          <p className="text-gray-700 text-lg leading-relaxed">
+          <p className="text-gray-700 md:text-lg leading-relaxed">
             Dr. Jignesh Sharma is a highly respected cardiologist with over 15
             years of experience in providing exceptional patient care. His
             specialties include
@@ -70,7 +70,7 @@ export default function AboutUs() {
               <h3 className="text-2xl font-bold mb-4 text-[#407338]">
                 Professional Journey
               </h3>
-              <ul className="space-y-2 list-disc list-inside text-gray-700">
+              <ul className="space-y-2 text-sm md:text-base list-disc list-inside text-gray-700">
                 <li>Completed MBBS from XYZ Medical College</li>
                 <li>MD in Cardiology from ABC University</li>
                 <li>Worked at PQR Hospital for 10 years as Senior Consultant</li>
@@ -86,7 +86,7 @@ export default function AboutUs() {
               <h3 className="text-2xl font-bold mb-4 text-[#407338]">
                 Achievements
               </h3>
-              <ul className="space-y-2 list-disc list-inside text-gray-700">
+              <ul className="space-y-2 text-sm md:text-base list-disc list-inside text-gray-700">
                 <li> Recipient of the Best Cardiologist Award 2022</li>
                 <li>Published 20+ research papers in reputed journals</li>
                 <li>Invited speaker at national & international conferences</li>

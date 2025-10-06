@@ -220,8 +220,8 @@ export default function Navbar() {
                 onClick={() => handleScrollTo("contact")}
                 className={`w-full mt-2 px-4 py-2 rounded-xl font-semibold transition cursor-pointer ${
                   scrolled
-                    ? "bg-[#2A86BF] text-white hover:bg-[#246ea0]"
-                    : "bg-blue-100 text-black  hover:bg-gray-200"
+                    ? "bg-[#407338] text-white hover:bg-[#6da764]"
+                    : "bg-[#6aa461] text-black  hover:bg-[#6da764]"
                 }`}
               >
                 Book Appointment

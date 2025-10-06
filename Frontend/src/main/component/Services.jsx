@@ -60,7 +60,7 @@ export default function Services() {
               href={doc.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex md:hidden items-center justify-center bg-white text-green-600 rounded-full shadow hover:bg-green-600 hover:text-white transition duration-300 transform hover:scale-105 w-9 h-9"
+              className="flex md:hidden items-center justify-center bg-white text-green-600 rounded-full shadow hover:bg-green-600 hover:text-white transition duration-300 transform hover:scale-105 w-7 h-7"
             >
               <FaWhatsapp size={18} />
             </a>

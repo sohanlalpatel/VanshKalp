@@ -121,8 +121,13 @@ export default function Footer() {
 
       {/* Bottom */}
       <div className="mt-8 border-t border-white/20 pt-4 text-center text-gray-200 text-sm">
-        Developed and Managed by Binarylogix Technologies LLP© 2025
-      </div>
+ Developed and Managed by {" "}
+  <a href="https://binarylogix.in/" 
+     class="text-blue-600 hover:text-blue-800   transition duration-200" 
+     target="_blank" 
+     rel="noopener noreferrer">
+      Binarylogix Technologies LLP
+  </a> © 2025      </div>
     </footer>
   );
 }

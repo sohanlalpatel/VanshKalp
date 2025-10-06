@@ -1,6 +1,6 @@
 "use client";
 import { FaClinicMedical, FaUserMd, FaMapMarkerAlt } from "react-icons/fa";
-import drimage from "../../../assests/dr8.jpg";
+import drimage from "../../../assests/clinic.jpg";
 import React from "react";
 
 const Intro = () => {
@@ -84,7 +84,7 @@ const Intro = () => {
           {/* Bottom Image (slightly bigger, overlapping) */}
           <div className="absolute -bottom-16 md:left-10 rounded-b-full overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-[1.05] hover:-rotate-1 w-52 md:w-72 md:h-72">
             <img
-              src="https://www.starmedicalassociates.com/wp-content/uploads/sites/539/2020/06/iStock-1140150522.jpg"
+              src="https://plus.unsplash.com/premium_photo-1682310215405-3f493a5fecde?q=80&w=1212&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Clinic Equipment"
               className="w-full h-full object-cover"
             />

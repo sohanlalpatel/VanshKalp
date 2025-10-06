@@ -16,7 +16,7 @@ export default function AboutUs() {
             <div className="absolute -inset-2 bg-gradient-to-tr from-[#2A86BF] via-[#98BF45] to-[#407338] rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition duration-500"></div>
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
               <img
-          src={DrPhoto}
+          src="https://plus.unsplash.com/premium_photo-1661492071612-98d26885614a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Dr. Jignesh Sharma"
                 className="w-full h-80 md:h-[590px] object-cover transform transition duration-500 group-hover:scale-105"
               />

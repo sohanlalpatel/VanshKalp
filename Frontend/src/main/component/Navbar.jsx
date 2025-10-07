@@ -221,7 +221,7 @@ export default function Navbar() {
                 className={`w-full mt-2 px-4 py-2 rounded-xl font-semibold transition cursor-pointer ${
                   scrolled
                     ? "bg-[#407338] text-white hover:bg-[#6da764]"
-                    : "bg-[#6aa461] text-black  hover:bg-[#6da764]"
+                    : "bg-[#6aa461] text-white  hover:bg-[#6da764]"
                 }`}
               >
                 Book Appointment
@@ -275,7 +275,7 @@ export default function Navbar() {
               className={`w-full mt-2 px-4 py-2 rounded-xl font-semibold transition cursor-pointer ${
                 scrolled
                     ? "bg-[#407338] text-white hover:bg-[#6da764]"
-                    : "bg-[#6aa461] text-black  hover:bg-[#6da764]"
+                    : "bg-[#6aa461] text-white  hover:bg-[#6da764]"
               }`}
             >
               Book Appointment

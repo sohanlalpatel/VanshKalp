@@ -31,8 +31,7 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 md:px-12 grid md:grid-cols-2 items-center gap-12">
         {/* Left Content */}
         <div className="order-2 md:order-1 animate-fadeInUp pt-28 md:pt-40 text-left">
-
-          <h1 className="   text-3xl md:text-4xl lg:text-5xl font-bold  text-black pt-4 md:pt-0">
+          <h1 className="   text-4xl md:text-4xl lg:text-6xl font-bold  text-black pt-4 md:pt-0">
             Your Health In
             <br />
             <span style={{ fontFamily: '"Borel", cursive' }}>Our Hands</span>
@@ -108,7 +107,6 @@ export default function HeroSection() {
                 src={image}
                 alt="Healthcare illustration"
                 className="relative w-79  h-auto object-contain rounded-t-2xl p-1 -mb-1  "
-                
               />
             </div>
           </div>

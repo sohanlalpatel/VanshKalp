@@ -39,8 +39,9 @@ export default function HeroSection() {
 
           {/* Paragraph */}
           <p className="  flex   text-gray-900 mb-8 max-w-lg mx-auto md:mx-0 animate-fadeIn delay-200">
-            We provide top-notch healthcare solutions with personalized
-            attention and expert guidance to keep you healthy and happy.
+            We provide top-notch healthcare solutions with personalized attention and expert
+guidance for your Genetics, Infertility and maternal and childcare needs to keep you
+healthy and happy.
           </p>
 
           {/* Image should appear right below paragraph in mobile */}

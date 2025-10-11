@@ -16,7 +16,7 @@ export default function AboutUs() {
             <div className="absolute -inset-2 bg-gradient-to-tr from-[#2A86BF] via-[#98BF45] to-[#407338] rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition duration-500"></div>
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
               <img
-          src="https://plus.unsplash.com/premium_photo-1661492071612-98d26885614a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="https://plus.unsplash.com/premium_photo-1661492071612-98d26885614a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Dr. Jignesh Sharma"
                 className="w-full h-80 md:h-[590px] object-cover transform transition duration-500 group-hover:scale-105"
               />
@@ -33,15 +33,17 @@ export default function AboutUs() {
 
           {/* Qualifications */}
           <p className=" text-lg md:text-xl font-semibold text-[#2A86BF]">
-            MBBS, MD – Cardiology
+            MBBS, DCH, DNB Pediatrics, DPAA (Sir Gangaramand IAS USA), Fellow
+            Genetic (AIIMS), Fellow Pediatric Cardiology (AIIMS)
           </p>
 
           {/* Bio */}
           <p className="text-gray-700 md:text-lg leading-relaxed">
-            Dr. Jignesh Sharma is a highly respected cardiologist with over 15
-            years of experience in providing exceptional patient care. His
-            specialties include
-            <span className="text-[#407338] font-semibold">
+            Dr. Jignesh Sharma is a highly respected pediatrician and Geneticist
+            with over years of experience in providing exceptional patient care.
+            His specialties include Genetics, Pediatric Allergy and Asthma and
+            Non interventional pediatric cardiology.
+            {/* <span className="text-[#407338] font-semibold">
               {" "}
               interventional cardiology
             </span>
@@ -53,15 +55,13 @@ export default function AboutUs() {
             , and
             <span className="text-[#407338] font-semibold">
               {" "}
-              preventive cardiology
-            </span>
+               cardiology
+            </span> */}
             .
           </p>
 
           {/* Cards: Achievements & Professional Journey */}
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-           
-
             {/* Professional Journey Card */}
             <div
               className="bg-gradient-to-tr from-[#2A86BF]/20 via-[#98BF45]/20 to-[#407338]/20 
@@ -71,14 +71,16 @@ export default function AboutUs() {
                 Professional Journey
               </h3>
               <ul className="space-y-2 text-sm md:text-base list-disc list-inside text-gray-700">
-                <li>Completed MBBS from XYZ Medical College</li>
-                <li>MD in Cardiology from ABC University</li>
-                <li>Worked at PQR Hospital for 10 years as Senior Consultant</li>
-               </ul>
+                <li>Completed MBBS from VM GMC SOLAPUR</li>
+                <li>DNB Pediatrics from SDMH, Jaipur</li>
+                <li>
+                  Fellowship in Genetics and Pediatric Cardiology from AIIMS
+                  Bhopal
+                </li>
+              </ul>
             </div>
 
-
-             {/* Achievements Card */}
+            {/* Achievements Card */}
             <div
               className="bg-gradient-to-tr from-[#2A86BF]/20 via-[#98BF45]/20 to-[#407338]/20 
                          border-l-4 border-[#98BF45] rounded-2xl shadow-xl p-6 backdrop-blur-md"
@@ -87,10 +89,12 @@ export default function AboutUs() {
                 Achievements
               </h3>
               <ul className="space-y-2 text-sm md:text-base list-disc list-inside text-gray-700">
-                <li> Recipient of the Best Cardiologist Award 2022</li>
-                <li>Published 20+ research papers in reputed journals</li>
-                <li>Invited speaker at national & international conferences</li>
-                <li>Led free heart check-up camps for community health</li>
+                <li>
+                  Diploma jn Pediatric Allergy and Asthma from SirGangaram and
+                  IAS USA
+                </li>
+                <li>&gt;15 Posters and Publications</li>
+                <li>Led free health check-up camps for community health</li>
               </ul>
             </div>
           </div>

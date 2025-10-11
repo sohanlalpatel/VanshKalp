@@ -14,7 +14,7 @@ const Intro = () => {
         <div className="flex-1 space-y-6">
           <div>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight animate-fade-in text-left">
-              Welcome to Our Clinic
+              Welcome to Our Digital platform
             </h2>
             <div
               className="h-1 bg-gradient-to-r from-[#407338] via-[#98BF45] to-[#2A86BF] rounded-full mt-2 
@@ -23,10 +23,13 @@ const Intro = () => {
           </div>
 
           <p className=" text-gray-600 animate-fade-in-up delay-200">
-            A descriptive paragraph that tells clients how good you are and
-            proves that you are the best choice they’ve made. This paragraph is
-            also for those who are looking for a reliable dental or medical
-            clinic.
+            We are dedicated to genetics, fertility, and maternal & child
+            health—helping families overcome challenges of prajana kathinai
+            (infertility), genetic disorders, and pregnancy concerns.With a
+            strong focus on genetics, we offer advanced diagnosis, counseling,
+            and personalized guidance to build healthier generations.we are
+            committed to improving maternal and child health by ensuring safe
+            motherhood and healthy childhood.
           </p>
 
           <div className="space-y-5">
@@ -59,15 +62,15 @@ const Intro = () => {
             </div>
           </div>
 
-        <a
-  href="https://www.google.com/maps?q=Delhi"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <button className="flex items-center gap-2 px-6 py-3 border   text-white rounded-lg font-medium hover:bg-[#6da764] hover:text-white transition-all duration-300 transform hover:scale-105 bg-[#407338] cursor-pointer">
-    <FaMapMarkerAlt /> View On Google Map
-  </button>
-</a>
+          <a
+            href="https://www.google.com/maps?q=Delhi"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="flex items-center gap-2 px-6 py-3 border   text-white rounded-lg font-medium hover:bg-[#6da764] hover:text-white transition-all duration-300 transform hover:scale-105 bg-[#407338] cursor-pointer">
+              <FaMapMarkerAlt /> View On Google Map
+            </button>
+          </a>
         </div>
 
         {/* Right Side Image */}

@@ -65,7 +65,7 @@ export default function ContactUs() {
       <div className="  w-20   md:w-28 h-1 bg-gradient-to-r from-[#407338] via-[#98BF45] to-[#2A86BF] mx-auto mb-8 rounded-full"></div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-12 items-start">
-         {/* Left Column: Info + Map */}
+        {/* Left Column: Info + Map */}
         <div className="space-y-8">
           {/* Info Cards */}
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
@@ -86,7 +86,7 @@ export default function ContactUs() {
               <div className="text-center sm:text-left">
                 <h4 className="font-semibold text-lg">Email</h4>
                 <p className="text-sm md:text-base text-gray-600">
-                  contact@doctorsite.com
+                  contact@vanshkalp.com{" "}
                 </p>
               </div>
             </div>

@@ -126,22 +126,23 @@ export default function Affiliations() {
                   <GraduationCap className="w-6 h-6 text-[#2A86BF] flex-shrink-0" />
                   <p className="text-gray-700 text-sm sm:text-base">
                     <span className="font-semibold">Qualifications:</span> MD
-                    (Obs & Gyn), Fellowship in Reproductive Medicine
+                    (Obs & Gyn), Fellowship in Reproductive Medicine.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <Stethoscope className="w-6 h-6 text-[#407338] flex-shrink-0" />
                   <p className="text-gray-700 text-sm sm:text-base">
                     <span className="font-semibold">Expertise:</span> IVF
-                    Consultation & Planning, Antenatal Care, Women&apos;s Health
+                    Consultation & Planning, Antenatal Care, Women&apos;s
+                    Health.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <Award className="w-6 h-6 text-[#98BF45] flex-shrink-0" />
                   <p className="text-gray-700 text-sm sm:text-base">
                     <span className="font-semibold">Clinical Experience:</span>{" "}
-                    15+ years in reproductive medicine, known for compassionate
-                    patient care and successful IVF outcomes.
+                    10+ years in Obstetric and Gynecologist medicine, known for
+                    compassionate patient care and successful IVF outcomes.
                   </p>
                 </div>
               </div>
